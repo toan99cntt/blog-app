@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#3F51B5"
+    tools:context=".MainActivity"
+    android:paddingTop="6sp"
+    android:paddingBottom="6sp"
+    android:paddingLeft="40sp"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:padding="5sp"
+        android:background="@color/white"
+        android:inputType="textPersonName"
+        android:hint="Search name or email..." />
+
+    <TextView
+        android:id="@+id/btnSearch"
+        android:layout_width="0sp"
+        android:textSize="24sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="15sp"
+        android:drawableLeft="@drawable/ic_baseline_search_24" />
+</LinearLayout>

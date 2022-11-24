@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="20sp"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="30sp"
+        android:textStyle="bold"
+        android:textColor="#1877f2"
+        android:textSize="35sp"
+        android:text="Register" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Name"
+        android:textColor="#656565"/>
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"/>
+    <TextView
+        android:id="@+id/errName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/txt5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Gender"
+        android:textColor="#656565"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdoMale"
+            android:layout_width="0sp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/rdoFemale"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/errGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Email"
+        android:textColor="#656565"/>
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"/>
+
+    <TextView
+        android:id="@+id/errEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/txt21"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Password"
+        android:textColor="#656565"/>
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/errPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"
+        android:textSize="10sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="140dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_marginRight="10sp"
+            android:textColor="#038CF8"
+            android:layout_height="wrap_content"
+            android:text="Login" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/btnRegister"
+            android:layout_width="140dp"
+            android:textSize="16sp"
+            android:textColor="#146E18"
+            android:textAllCaps="false"
+            android:layout_marginLeft="10sp"
+            android:layout_height="wrap_content"
+            android:text="Register" />
+    </LinearLayout>
+</LinearLayout>

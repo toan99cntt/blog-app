@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardElevation="5sp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/avatar" />
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10sp">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtCreated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="created_at"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnEdit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:visibility="gone"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:src="@drawable/ic_setting"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:text="title"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:text="content" />
+
+            <ImageView
+                android:id="@+id/imgContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtNumberLike"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="5sp"
+                android:layout_weight="1"
+                android:text="3 like" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:layout_marginTop="10sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btnLike"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="   Like"
+                    android:drawableLeft="@drawable/ic_like" />
+                <TextView
+                    android:id="@+id/btnComment"
+                    android:layout_width="0sp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Comment"
+                    android:paddingLeft="15sp"/>
+
+                <TextView
+                    android:id="@+id/txtView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_view"
+                    android:gravity="right"
+                    android:text="view" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

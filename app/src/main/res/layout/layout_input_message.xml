@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#3F51B5"
+    tools:context=".MainActivity"
+    android:padding="10sp"
+    android:orientation="horizontal">
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/edtSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:padding="5sp"
+        android:layout_marginTop="2sp"
+        android:layout_marginRight="5sp"
+        android:background="@color/white"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="#03A9F4"
+        android:drawableRight="@drawable/ic_baseline_send_24"
+        android:text="Send"
+        android:textAllCaps="false" />
+</LinearLayout>
