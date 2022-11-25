@@ -25,6 +25,8 @@
 
         <ImageView
             android:id="@+id/image"
+            android:maxHeight="300sp"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
