@@ -212,7 +212,7 @@ public class CreateBlogActivity extends AppCompatActivity {
     }
 
     private void createBlog(RequestBody title, RequestBody content, MultipartBody.Part muPart) {
-        ApiService.apiService.createBlog(title, content, muPart, token).enqueue(new Callback<CreateBlog>() {
+        ApiService.apiService.createBlog(title, content, cbxStatus.isChecked()? 1 : 0, muPart, token).enqueue(new Callback<CreateBlog>() {
             @Override
             public void onResponse(Call<CreateBlog> call, Response<CreateBlog> response) {
                 CreateBlog res = response.body();

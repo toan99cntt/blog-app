@@ -99,8 +99,8 @@ public class MainActivity extends AppCompatActivity {
         errPassword.setText("");
         errUsername.setText("");
 
-        if(username.trim().equals("")) errPassword.setText("Username field is required.");
-        if(password.trim().equals("")) errUsername.setText("Password field is required.");
+        if(username.trim().equals("")) errUsername.setText("Email field is required.");
+        if(password.trim().equals("")) errPassword.setText("Password field is required.");
         if(username.trim().equals("") || password.trim().equals("")) return;
         ApiService.apiService.loginUser(username, password)
                 .enqueue(new Callback<Login>() {
@@ -108,13 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<Login> call, Response<Login> response) {
                         Login res = response.body();
                         if(res.getStatus() == 200) {
-                            SharedPreferences sharedPref =  PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-                            SharedPreferences.Editor editor = sharedPref.edit();
-                            editor.putString("token",res.getData().getToken_type() + " " + res.getData().getAccess_token());
-                            editor.apply();
-
-                            Intent intent = new Intent(MainActivity.this, ListBlogActivity.class);
-                            startActivity(intent);
+                            getInfo(res.getData().getToken_type() + " " + res.getData().getAccess_token());
                         } else if(res.getStatus() == 401) {
                             Toast.makeText(MainActivity.this, "Incorrect account or password!", Toast.LENGTH_LONG).show();
                         } else {
@@ -171,6 +165,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    private void getInfo(String token) {
+        ApiService.apiService.getInfoUser(token).enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                User res = response.body();
+                if(response.body().getStatus() == 200) {
+                    SharedPreferences sharedPref =  PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("token",token);
+                    editor.putInt("id",res.getData().getId());
+                    editor.apply();
+                    Intent intent = new Intent(MainActivity.this, ListBlogActivity.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                getInfo(token);
+            }
+        });
     }
 
     private void init() {

@@ -117,6 +117,7 @@ public interface ApiService {
     @POST("api/blogs")
     Call<CreateBlog> createBlog(@Part ("_title") RequestBody title,
                                 @Part("_content") RequestBody content,
+                                @Part("_status") int status,
                                 @Part MultipartBody.Part image,
                                 @Header("authorization") String token);
 
